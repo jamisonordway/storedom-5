@@ -13,7 +13,7 @@ context 'visitor' do
     it 'should return all stores within 25 miles with store information' do
       visit '/'
 
-      fill_in "Search by zip code", with: "80202"
+      fill_in :search, with: "80202"
       click_on "Search"
       expect(current_path).to eq('/search')
       expect(page).to have_content("14 Total Stores")
