@@ -16,6 +16,9 @@ gem 'jbuilder', '~> 2.5'
 gem 'faker'
 gem 'therubyracer'
 gem 'bootstrap-sass'
+gem 'faraday'
+gem 'active_model_serializers'
+gem 'figaro'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
@@ -23,6 +26,9 @@ group :development, :test do
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
   gem 'rspec-rails'
+  gem 'webmock'
+  gem 'vcr'
+  gem 'launchy'
 end
 
 group :development do
