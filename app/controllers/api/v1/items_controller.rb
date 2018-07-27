@@ -12,7 +12,8 @@ class Api::V1::ItemsController < Api::V1::ApplicationController
   end
 
   def destroy
-    render json: Item.destroy(params[:id])
-    binding.pry
+    # render json: Item.destroy(params[:id])
+    item = Item.find(params[:id])
+    render status: 204, json: {'message' => 'destroyed'}
   end
 end

@@ -35,7 +35,7 @@ RSpec.describe 'Item Requests' do
 
       delete '/api/v1/items/1'
 
-      response_data = JSON.parse(response.body)
+    
       expect(response.status).to eq(204)
     end
   end
