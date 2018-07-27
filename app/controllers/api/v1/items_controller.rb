@@ -16,4 +16,15 @@ class Api::V1::ItemsController < Api::V1::ApplicationController
     item = Item.find(params[:id])
     render status: 204, json: {'message' => 'destroyed'}
   end
+
+  def create
+    item = Item.create(item_params)
+    render status: 201, json: { 'message' => 'created' }
+  end
+
+  private
+
+  def item_params
+    params.permit(:id, :name, :description, :image_url, :updated_at, :created_at)
+  end
 end

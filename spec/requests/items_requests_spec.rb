@@ -39,4 +39,14 @@ RSpec.describe 'Item Requests' do
       expect(response.status).to eq(204)
     end
   end
+  context 'POST /api/v1/items/1' do
+    it 'should return a 201 JSON response to indicate the item was successfully created' do
+      item_1 = Item.create!(id: 1, name: "item name", description: "description", image_url: 'url', created_at: '2011-07-14T19:43:37+0100', updated_at: '2011-07-14T19:43:37+0100')
+      item_2 = Item.create!(id: 2, name: "item is thing", description: "tell me all about it", image_url: 'url2', created_at: '2011-07-14T19:43:37+0100', updated_at: '2011-07-14T19:43:37+0100')
+
+      post '/api/v1/items/'
+
+      expect(response.status).to eq(201)
+    end
+  end
 end
