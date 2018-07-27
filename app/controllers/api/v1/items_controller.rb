@@ -10,4 +10,9 @@ class Api::V1::ItemsController < Api::V1::ApplicationController
     item = Item.find(params[:id])
     render json: item
   end
+
+  def destroy
+    render json: Item.destroy(params[:id])
+    binding.pry
+  end
 end
