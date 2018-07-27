@@ -3,13 +3,14 @@ class BestBuyService
   def initialize
     # binding.pry
     @base_url = Faraday.new('https://api.bestbuy.com')
+    @api_key = ENV['api_key']
   end
 
   def get_stores(zip)
-    response = @base_url.get("/v1/stores?apiKey=&postalCode=#{zip}") do |request|
+    response = @base_url.get("/v1/stores?apiKey=#{@api_key}&postalCode=#{zip}")
     binding.pry
-      request.headers['apiKey'] = ENV['api_key']
-    end
-    JSON.parse(response.body)
+    raw_data = JSON.parse(response.body, symbolize_names: true)
+  rescue JSON::ParserError
+    []
   end
 end

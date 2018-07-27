@@ -1,11 +1,11 @@
 class Result
 
   def initialize(response_data)
+    binding.pry
     @data = response_data
   end
 
   def stores_near_zip
-    binding.pry
     new_data = @data
   end
 
