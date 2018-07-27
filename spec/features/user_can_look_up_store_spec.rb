@@ -17,6 +17,12 @@ context 'visitor' do
       click_on "Search"
       expect(current_path).to eq('/search')
       expect(page).to have_content("14 Total Stores")
+
+      expect(page).to have_content("Store Name:")
+      expect(page).to have_content("City:")
+      expect(page).to have_content("Distance:")
+      expect(page).to have_content("Phone Number:")
+      expect(page).to have_content("Type of Store:")
     end
   end
 end

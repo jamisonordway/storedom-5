@@ -7,7 +7,6 @@ class Result
   def stores_near_zip
     all_stores_data = @data[:stores]
     all_stores_data.map do |data|
-      # binding.pry
        Store.new(data)
     end
 end
