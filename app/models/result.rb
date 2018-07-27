@@ -5,11 +5,11 @@ class Result
   end
   
   def stores_near_zip
-    new_data = @data
-  end
-  # binding.pry
-  new_data.map do |new_data|
+    all_stores_data = @data["stores"]
+    binding.pry
+    all_stores_data.map do |data|
     Store.new(new_data)
+    end
 end
 
 end
