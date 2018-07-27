@@ -7,7 +7,7 @@ class BestBuyService
   end
 
   def get_stores(zip)
-    response = @base_url.get("/v1/stores?format=json&show=storeId,storeType,name&pageSize=2&apiKey=#{@api_key}&postalCode=#{zip}")
+    response = @base_url.get("/v1/stores?format=json&show=storeId,storeType,name&pageSize=2&apiKey=#{@api_key}&postalCode=#{zip}&radius=25")
     raw_data = JSON.parse(response.body, symbolize_names: true)
     binding.pry
   end

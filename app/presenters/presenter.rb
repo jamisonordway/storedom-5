@@ -7,7 +7,7 @@ class Presenter
 
   def nearby_stores
     stores = Result.new(@best_buy_service.get_stores(zip))
-    # binding.pry
+    binding.pry
   end
 
   def zip
