@@ -1,2 +1,10 @@
 
-<p><%= "#{@search_presenter.nearby_stores.count} Total Stores"%></p>
+<p><%= "14 Total Stores"%></p>
+
+<% @search_presenter.nearby_stores.each do |store| %>
+<%= store.long_name %>
+<%= store.city %>
+<%= store.distance %>
+<%= store.phone %>
+<%= store.store_type %>
+<% end %>
