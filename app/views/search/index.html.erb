@@ -2,9 +2,9 @@
 <p><%= "14 Total Stores"%></p>
 
 <% @search_presenter.nearby_stores.each do |store| %>
-<%= store.long_name %>
-<%= store.city %>
-<%= store.distance %>
-<%= store.phone %>
-<%= store.store_type %>
+<p>Store Name: <%= store.long_name %></p>
+<p>City: <%= store.city %></p>
+<p>Distance: <%= store.distance %></p>
+<p>Phone Number: <%= store.phone %></p>
+<p>Type of Store: <%= store.store_type %></p>
 <% end %>
